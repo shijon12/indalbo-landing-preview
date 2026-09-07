@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — Indalbo</title>
+  <meta name="description" content="How Indalbo collects, uses, and protects your data." />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Sparkle favicon (matches the app's brand mark) -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M50 0 L56 44 L100 50 L56 56 L50 100 L44 56 L0 50 L44 44 Z' fill='%23332f3f'/%3E%3C/svg%3E" />
+
+  <!-- Same type system as indalbo.com / app.indalbo.com -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300..700&family=Geist+Mono:wght@400;500&display=swap" />
+
+  <style>
+    /* Dawn design tokens (mirrored from index.html) */
+    :root {
+      --bg-base:      oklch(0.995 0.002 230);
+      --ink:          oklch(0.22 0.015 250);
+      --ink-soft:     oklch(0.42 0.015 250);
+      --ink-faint:    oklch(0.52 0.015 250);
+      --hairline:     oklch(0.90 0.008 230 / 0.85);
+      --sunrise:      oklch(0.74 0.15 55);
+      --sunrise-deep: oklch(0.58 0.16 45);
+      --glass-tint:   oklch(1 0 0 / 0.72);
+      --glass-border: oklch(1 0 0 / 0.85);
+      --glass-blur:   22px;
+      --radius:    14px;
+      --radius-lg: 22px;
+      --font-display: "Instrument Serif", "Cormorant Garamond", serif;
+      --font-sans:    "Geist", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --font-mono:    "Geist Mono", ui-monospace, monospace;
+      --shore:   oklch(0.98 0.010 230);
+    }
+    * { box-sizing: border-box; }
+    html, body { overflow-x: hidden; max-width: 100%; }
+    body {
+      margin: 0;
+      font-family: var(--font-sans);
+      font-feature-settings: "ss01", "cv11";
+      color: var(--ink);
+      background:
+        linear-gradient(180deg, oklch(0.93 0.035 230 / 0.55) 0%, transparent 340px),
+        var(--shore);
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+      letter-spacing: -0.005em;
+    }
+    .wrap { max-width: 1120px; margin: 0 auto; padding: 0 clamp(20px, 5vw, 48px); }
+
+    /* Top bar (identical to index.html) */
+    header.topbar {
+      position: sticky; top: 0; z-index: 10;
+      backdrop-filter: blur(10px) saturate(120%);
+      -webkit-backdrop-filter: blur(10px) saturate(120%);
+      background: oklch(1 0 0 / 0.28);
+      border-bottom: 1px solid oklch(1 0 0 / 0.4);
+    }
+    .topbar .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+    .brand { display: flex; align-items: center; gap: 9px; text-decoration: none; }
+    .star { display: inline-block; width: 18px; height: 18px; position: relative; flex-shrink: 0; color: var(--ink); }
+    .star::before, .star::after {
+      content: ""; position: absolute; inset: 0; background: currentColor;
+      clip-path: polygon(50% 0%, 56% 44%, 100% 50%, 56% 56%, 50% 100%, 44% 56%, 0% 50%, 44% 44%);
+    }
+    .star::after { transform: rotate(45deg); opacity: 0.5; }
+    .wordmark { font-family: var(--font-sans); font-size: 19px; font-weight: 600; letter-spacing: -0.01em; line-height: 1; color: var(--ink); }
+    .topbar-actions { display: flex; align-items: center; gap: 14px; }
+    .navlink { font: 500 14px var(--font-sans); color: var(--ink-soft); text-decoration: none; transition: color 140ms ease; }
+    .navlink:hover { color: var(--ink); }
+    .btn-pill {
+      display: inline-flex; align-items: center; gap: 9px;
+      padding: 11px 22px; border-radius: 999px;
+      font: 540 14px var(--font-sans); border: 0;
+      background: var(--ink); color: var(--bg-base);
+      cursor: pointer; text-decoration: none; white-space: nowrap;
+      transition: transform 100ms ease, background 160ms ease;
+    }
+    .btn-pill:hover { background: oklch(0.32 0.025 250); transform: translateY(-1px); }
+    .btn-sm { padding: 8px 16px; font-size: 13.5px; }
+
+    /* Legal prose */
+    .legal { padding: clamp(44px, 8vh, 88px) 0 clamp(56px, 9vh, 104px); }
+    .legal-head { max-width: 72ch; }
+    .legal-head .section-label {
+      font: 500 12.5px var(--font-mono); letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--ink-faint); margin: 0 0 14px;
+    }
+    .legal-head h1 {
+      font-family: var(--font-sans); font-weight: 500;
+      font-size: clamp(32px, 5.4vw, 56px); line-height: 1.02;
+      letter-spacing: -0.035em; margin: 0;
+    }
+    .legal-head h1 .serif { font-family: var(--font-display); font-style: italic; font-weight: 400; letter-spacing: -0.01em; }
+    .legal-head .dateline { margin: 16px 0 0; font: 500 13.5px var(--font-mono); color: var(--ink-faint); }
+
+    .prose { max-width: 72ch; margin-top: clamp(28px, 4vh, 44px); }
+    .prose h2 {
+      font-family: var(--font-sans); font-weight: 550;
+      font-size: clamp(19px, 2vw, 23px); letter-spacing: -0.02em;
+      margin: clamp(34px, 4.5vh, 48px) 0 10px;
+    }
+    .prose h2:first-child { margin-top: 0; }
+    .prose p, .prose li { font-size: 15.5px; line-height: 1.65; color: var(--ink-soft); }
+    .prose p { margin: 0 0 14px; }
+    .prose ul { margin: 0 0 14px; padding-left: 22px; }
+    .prose li { margin: 6px 0; }
+    .prose li::marker { color: var(--sunrise-deep); }
+    .prose strong { color: var(--ink); font-weight: 560; }
+    .prose a { color: var(--ink); text-decoration: underline; text-decoration-color: oklch(0.74 0.15 55 / 0.5); text-underline-offset: 2px; }
+    .prose a:hover { text-decoration-color: var(--sunrise-deep); }
+
+    .tldr {
+      margin: clamp(24px, 3.5vh, 36px) 0 0;
+      padding: 20px 22px; border-radius: var(--radius-lg);
+      background: var(--glass-tint); border: 1px solid var(--glass-border);
+      box-shadow: 0 1px 0 oklch(1 0 0 / 0.7) inset, 0 14px 40px -20px oklch(0.45 0.06 240 / 0.22);
+      backdrop-filter: blur(var(--glass-blur)) saturate(120%);
+      -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(120%);
+      max-width: 72ch;
+    }
+    .tldr .tldr-label { font: 500 12px var(--font-mono); letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-faint); margin: 0 0 8px; }
+    .tldr ul { margin: 0; padding-left: 20px; }
+    .tldr li { font-size: 14.5px; line-height: 1.6; color: var(--ink-soft); margin: 5px 0; }
+    .tldr li::marker { color: var(--sunrise-deep); }
+
+    /* Footer (identical to index.html, plus legal links) */
+    footer.foot { border-top: 1px solid var(--hairline); background: oklch(1 0 0 / 0.35); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
+    .foot .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-top: 26px; padding-bottom: 26px; flex-wrap: wrap; }
+    .foot .tagline { font-size: 13px; color: var(--ink-faint); }
+    .foot .foot-links { display: flex; gap: 20px; flex-wrap: wrap; }
+    .foot .foot-links a { font: 500 13px var(--font-sans); color: var(--ink-soft); text-decoration: none; }
+    .foot .foot-links a:hover { color: var(--ink); }
+
+    @media (max-width: 560px) {
+      .topbar .wrap { height: 58px; }
+      .nav-hide { display: none; }
+    }
+  </style>
+  <meta name="robots" content="noindex, nofollow" />
+</head>
+<body>
+  <!-- Top bar -->
+  <header class="topbar">
+    <div class="wrap">
+      <a class="brand" href="./" aria-label="Indalbo home">
+        <span class="star" aria-hidden="true"></span>
+        <span class="wordmark">Indalbo</span>
+      </a>
+      <div class="topbar-actions">
+        <a class="navlink nav-hide" href="https://app.indalbo.com/sign-in">Sign in</a>
+        <a class="btn-pill btn-sm" href="https://app.indalbo.com/sign-up">Get started <span class="arrow">→</span></a>
+      </div>
+    </div>
+  </header>
+
+  <main class="legal">
+    <div class="wrap">
+      <div class="legal-head">
+        <p class="section-label">Legal</p>
+        <h1>Privacy <span class="serif">Policy</span></h1>
+        <p class="dateline">Effective July 17, 2026</p>
+      </div>
+
+      <div class="tldr">
+        <p class="tldr-label">The short version</p>
+        <ul>
+          <li>We collect what we need to run your AI team: your account details, what you tell your VPs, and the data from the business tools you choose to connect.</li>
+          <li>We never sell your data, never show you ads, and never use your data to train AI models.</li>
+          <li>Your workspace is isolated — your data lives separately from every other customer's.</li>
+          <li>Anything irreversible (money, public posts) needs your explicit approval inside the app.</li>
+          <li>Delete your organization and your workspace is destroyed. Email us for a full purge, including archival copies.</li>
+        </ul>
+      </div>
+
+      <div class="prose">
+        <h2>1. Who we are</h2>
+        <p>Indalbo ("we", "us") provides an AI executive team for your business at <a href="https://app.indalbo.com">app.indalbo.com</a>. This policy describes what data we collect, how we use it, and the choices you have. Questions or requests: <a href="mailto:support@indalbo.com">support@indalbo.com</a>.</p>
+
+        <h2>2. What we collect</h2>
+        <p><strong>Account information.</strong> When you sign up, our sign-in provider (Clerk) collects your name, email address, and organization details, which we use to identify you and provision your workspace.</p>
+        <p><strong>Content you provide.</strong> Your conversations with your AI team, files you upload, business details you share during onboarding, and settings such as budgets and schedules.</p>
+        <p><strong>Connected-service data.</strong> When you connect a business tool (for example a storefront, print-on-demand service, email marketing tool, or social account), we access only the data covered by the permissions you grant — such as products, orders, revenue figures, form responses, or the ability to draft posts — and only to do the work you've asked your team to do.</p>
+        <p><strong>Usage and technical data.</strong> Logs of how the service is used (feature activity, errors, timestamps) that help us keep it reliable and improve it.</p>
+
+        <h2>3. What we never do</h2>
+        <ul>
+          <li>We never sell your personal or business data to anyone.</li>
+          <li>We never show ads or share your data with advertisers.</li>
+          <li>We never use your data to train AI models — ours or anyone else's.</li>
+          <li>We never share data between customers. Each workspace is isolated.</li>
+        </ul>
+
+        <h2>4. How we use your data</h2>
+        <p>Solely to provide the service: running your AI team, executing the work you assign against the tools you've connected, computing your business metrics, notifying you when something needs your attention, and keeping the platform secure and reliable. That's it.</p>
+
+        <h2>5. Who processes it for us</h2>
+        <p>We use a small number of service providers to run Indalbo, each receiving only what its function requires:</p>
+        <ul>
+          <li><strong>Clerk</strong> — sign-in and account management.</li>
+          <li><strong>Cloudflare</strong> — hosting, networking, and security.</li>
+          <li><strong>OpenAI</strong> — the language models behind your AI team. Data sent to OpenAI's API is not used to train their models. Some routine internal routing runs on AI models hosted on our own infrastructure and never leaves it.</li>
+          <li><strong>Composio</strong> — a secure connection broker for certain integrations (for example Gmail or Facebook), handling the sign-in handshake with those services.</li>
+          <li><strong>Tavily</strong> — web search, when your team researches something online. Only the search query is shared.</li>
+        </ul>
+        <p>The third-party services you choose to connect (your storefront, email tool, social accounts, and so on) process data under their own privacy policies — your relationship with them is direct, and you can disconnect any of them at any time.</p>
+
+        <h2>6. Credentials and isolation</h2>
+        <p>When you connect a service, its access tokens or keys are stored in your own isolated workspace — dedicated infrastructure and a dedicated database per customer — and are used only to perform the work you've authorized. Data moves over encrypted connections (TLS). We request the narrowest permissions each integration supports.</p>
+
+        <h2>7. You approve what matters</h2>
+        <p>Actions with real-world consequences — spending money, issuing refunds, publishing publicly, deleting things — stop and wait for your explicit approval inside the app. Your AI team never takes an irreversible action silently.</p>
+
+        <h2>8. Retention and deletion</h2>
+        <p>We keep your data while your account is active. If you delete your organization, your workspace — including its database and connected-service credentials — is destroyed. To request a complete purge, including any archival copies we hold for recovery purposes, email <a href="mailto:support@indalbo.com">support@indalbo.com</a> and we will complete it within 30 days.</p>
+
+        <h2>9. Your rights</h2>
+        <p>You can ask us to access, export, correct, or delete your personal data at any time by emailing <a href="mailto:support@indalbo.com">support@indalbo.com</a>. We respond to all requests within 30 days. Depending on where you live (for example the EU/EEA, UK, or California), these rights may be backed by law — we honor them for everyone regardless.</p>
+
+        <h2>10. Security</h2>
+        <p>We use reasonable technical and organizational safeguards — isolated per-customer environments, encrypted transport, least-privilege access, and approval gates on consequential actions. No online service can promise perfect security, and Indalbo is in active development as a private beta; we'll notify you without undue delay if a breach affects your data.</p>
+
+        <h2>11. Children</h2>
+        <p>Indalbo is a business tool and isn't directed at children under 16. We don't knowingly collect their data.</p>
+
+        <h2>12. Changes</h2>
+        <p>If this policy changes materially, we'll post the update here and note the new effective date; for significant changes we'll also tell you in the app or by email.</p>
+
+        <h2>13. Contact</h2>
+        <p><a href="mailto:support@indalbo.com">support@indalbo.com</a></p>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="foot">
+    <div class="wrap">
+      <a class="brand" href="./" aria-label="Indalbo home">
+        <span class="star" aria-hidden="true"></span>
+        <span class="wordmark">Indalbo</span>
+      </a>
+      <span class="tagline">The agentic operating system for founders.</span>
+      <div class="foot-links">
+        <a href="https://app.indalbo.com">Open the app</a>
+        <a href="./privacy.html">Privacy</a>
+        <a href="./terms.html">Terms</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

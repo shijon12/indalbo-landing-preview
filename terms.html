@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terms of Service — Indalbo</title>
+  <meta name="description" content="The terms that govern your use of Indalbo." />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Sparkle favicon (matches the app's brand mark) -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M50 0 L56 44 L100 50 L56 56 L50 100 L44 56 L0 50 L44 44 Z' fill='%23332f3f'/%3E%3C/svg%3E" />
+
+  <!-- Same type system as indalbo.com / app.indalbo.com -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300..700&family=Geist+Mono:wght@400;500&display=swap" />
+
+  <style>
+    /* Dawn design tokens (mirrored from index.html) */
+    :root {
+      --bg-base:      oklch(0.995 0.002 230);
+      --ink:          oklch(0.22 0.015 250);
+      --ink-soft:     oklch(0.42 0.015 250);
+      --ink-faint:    oklch(0.52 0.015 250);
+      --hairline:     oklch(0.90 0.008 230 / 0.85);
+      --sunrise:      oklch(0.74 0.15 55);
+      --sunrise-deep: oklch(0.58 0.16 45);
+      --glass-tint:   oklch(1 0 0 / 0.72);
+      --glass-border: oklch(1 0 0 / 0.85);
+      --glass-blur:   22px;
+      --radius:    14px;
+      --radius-lg: 22px;
+      --font-display: "Instrument Serif", "Cormorant Garamond", serif;
+      --font-sans:    "Geist", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --font-mono:    "Geist Mono", ui-monospace, monospace;
+      --shore:   oklch(0.98 0.010 230);
+    }
+    * { box-sizing: border-box; }
+    html, body { overflow-x: hidden; max-width: 100%; }
+    body {
+      margin: 0;
+      font-family: var(--font-sans);
+      font-feature-settings: "ss01", "cv11";
+      color: var(--ink);
+      background:
+        linear-gradient(180deg, oklch(0.93 0.035 230 / 0.55) 0%, transparent 340px),
+        var(--shore);
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+      letter-spacing: -0.005em;
+    }
+    .wrap { max-width: 1120px; margin: 0 auto; padding: 0 clamp(20px, 5vw, 48px); }
+
+    /* Top bar (identical to index.html) */
+    header.topbar {
+      position: sticky; top: 0; z-index: 10;
+      backdrop-filter: blur(10px) saturate(120%);
+      -webkit-backdrop-filter: blur(10px) saturate(120%);
+      background: oklch(1 0 0 / 0.28);
+      border-bottom: 1px solid oklch(1 0 0 / 0.4);
+    }
+    .topbar .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+    .brand { display: flex; align-items: center; gap: 9px; text-decoration: none; }
+    .star { display: inline-block; width: 18px; height: 18px; position: relative; flex-shrink: 0; color: var(--ink); }
+    .star::before, .star::after {
+      content: ""; position: absolute; inset: 0; background: currentColor;
+      clip-path: polygon(50% 0%, 56% 44%, 100% 50%, 56% 56%, 50% 100%, 44% 56%, 0% 50%, 44% 44%);
+    }
+    .star::after { transform: rotate(45deg); opacity: 0.5; }
+    .wordmark { font-family: var(--font-sans); font-size: 19px; font-weight: 600; letter-spacing: -0.01em; line-height: 1; color: var(--ink); }
+    .topbar-actions { display: flex; align-items: center; gap: 14px; }
+    .navlink { font: 500 14px var(--font-sans); color: var(--ink-soft); text-decoration: none; transition: color 140ms ease; }
+    .navlink:hover { color: var(--ink); }
+    .btn-pill {
+      display: inline-flex; align-items: center; gap: 9px;
+      padding: 11px 22px; border-radius: 999px;
+      font: 540 14px var(--font-sans); border: 0;
+      background: var(--ink); color: var(--bg-base);
+      cursor: pointer; text-decoration: none; white-space: nowrap;
+      transition: transform 100ms ease, background 160ms ease;
+    }
+    .btn-pill:hover { background: oklch(0.32 0.025 250); transform: translateY(-1px); }
+    .btn-sm { padding: 8px 16px; font-size: 13.5px; }
+
+    /* Legal prose */
+    .legal { padding: clamp(44px, 8vh, 88px) 0 clamp(56px, 9vh, 104px); }
+    .legal-head { max-width: 72ch; }
+    .legal-head .section-label {
+      font: 500 12.5px var(--font-mono); letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--ink-faint); margin: 0 0 14px;
+    }
+    .legal-head h1 {
+      font-family: var(--font-sans); font-weight: 500;
+      font-size: clamp(32px, 5.4vw, 56px); line-height: 1.02;
+      letter-spacing: -0.035em; margin: 0;
+    }
+    .legal-head h1 .serif { font-family: var(--font-display); font-style: italic; font-weight: 400; letter-spacing: -0.01em; }
+    .legal-head .dateline { margin: 16px 0 0; font: 500 13.5px var(--font-mono); color: var(--ink-faint); }
+
+    .prose { max-width: 72ch; margin-top: clamp(28px, 4vh, 44px); }
+    .prose h2 {
+      font-family: var(--font-sans); font-weight: 550;
+      font-size: clamp(19px, 2vw, 23px); letter-spacing: -0.02em;
+      margin: clamp(34px, 4.5vh, 48px) 0 10px;
+    }
+    .prose h2:first-child { margin-top: 0; }
+    .prose p, .prose li { font-size: 15.5px; line-height: 1.65; color: var(--ink-soft); }
+    .prose p { margin: 0 0 14px; }
+    .prose ul { margin: 0 0 14px; padding-left: 22px; }
+    .prose li { margin: 6px 0; }
+    .prose li::marker { color: var(--sunrise-deep); }
+    .prose strong { color: var(--ink); font-weight: 560; }
+    .prose a { color: var(--ink); text-decoration: underline; text-decoration-color: oklch(0.74 0.15 55 / 0.5); text-underline-offset: 2px; }
+    .prose a:hover { text-decoration-color: var(--sunrise-deep); }
+
+    .notice {
+      margin: 10px 0 14px;
+      padding: 16px 18px; border-radius: var(--radius);
+      background: var(--glass-tint); border: 1px solid var(--glass-border);
+      backdrop-filter: blur(var(--glass-blur)) saturate(120%);
+      -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(120%);
+    }
+    .notice p { margin: 0; font-size: 14.5px; }
+
+    /* Footer (identical to index.html, plus legal links) */
+    footer.foot { border-top: 1px solid var(--hairline); background: oklch(1 0 0 / 0.35); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
+    .foot .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-top: 26px; padding-bottom: 26px; flex-wrap: wrap; }
+    .foot .tagline { font-size: 13px; color: var(--ink-faint); }
+    .foot .foot-links { display: flex; gap: 20px; flex-wrap: wrap; }
+    .foot .foot-links a { font: 500 13px var(--font-sans); color: var(--ink-soft); text-decoration: none; }
+    .foot .foot-links a:hover { color: var(--ink); }
+
+    @media (max-width: 560px) {
+      .topbar .wrap { height: 58px; }
+      .nav-hide { display: none; }
+    }
+  </style>
+  <meta name="robots" content="noindex, nofollow" />
+</head>
+<body>
+  <!-- Top bar -->
+  <header class="topbar">
+    <div class="wrap">
+      <a class="brand" href="./" aria-label="Indalbo home">
+        <span class="star" aria-hidden="true"></span>
+        <span class="wordmark">Indalbo</span>
+      </a>
+      <div class="topbar-actions">
+        <a class="navlink nav-hide" href="https://app.indalbo.com/sign-in">Sign in</a>
+        <a class="btn-pill btn-sm" href="https://app.indalbo.com/sign-up">Get started <span class="arrow">→</span></a>
+      </div>
+    </div>
+  </header>
+
+  <main class="legal">
+    <div class="wrap">
+      <div class="legal-head">
+        <p class="section-label">Legal</p>
+        <h1>Terms of <span class="serif">Service</span></h1>
+        <p class="dateline">Effective July 17, 2026</p>
+      </div>
+
+      <div class="prose">
+        <h2>1. Agreement</h2>
+        <p>These terms govern your use of Indalbo — the AI executive-team platform at <a href="https://app.indalbo.com">app.indalbo.com</a>, operated by Indalbo ("we", "us"). By creating an account or using the service you agree to them. If you use Indalbo for a company, you're agreeing on its behalf.</p>
+
+        <h2>2. Private beta</h2>
+        <p>Indalbo is currently an invite-only private beta. The service is under active development: features may change, be added, or be removed, and occasional downtime or rough edges are part of the deal. The service is currently free to use during the beta; if we introduce paid plans, we'll give you clear notice before anything is charged.</p>
+
+        <h2>3. What Indalbo does</h2>
+        <p>Indalbo gives you a team of AI agents that work at your direction: you brief them, they carry out work using the tools and accounts you connect, and they report back. Two principles are built in:</p>
+        <ul>
+          <li><strong>You approve what matters.</strong> Actions with real-world consequences — spending money, refunds, publishing publicly, deleting things — pause for your explicit approval in the app.</li>
+          <li><strong>You stay in command.</strong> You can watch work happen, stop tasks, set budgets, and disconnect any tool at any time.</li>
+        </ul>
+
+        <h2>4. Your account</h2>
+        <p>Keep your sign-in credentials safe and your account information accurate. You're responsible for activity under your account. You must be at least 16 (and old enough to form a contract where you live) to use Indalbo.</p>
+
+        <h2>5. Your content and data</h2>
+        <p>Everything you bring to Indalbo — your conversations, files, business data, and the data from services you connect — remains yours. You give us permission to process it only as needed to provide the service, as described in our <a href="./privacy.html">Privacy Policy</a>. We never sell it and never use it to train AI models.</p>
+
+        <h2>6. Connected services</h2>
+        <p>When you connect a third-party service (a storefront, print-on-demand provider, email tool, social account, and so on), you authorize Indalbo to act on it within the permissions you grant. Your relationship with each connected service is directly between you and that provider, governed by their own terms — connecting them through Indalbo doesn't change your obligations to them, and you're responsible for having the right to connect the accounts you connect.</p>
+
+        <h2>7. AI can be wrong</h2>
+        <p>Your AI team is capable, but AI-generated work can contain mistakes. Review important output before relying on it, and treat recommendations — including anything touching pricing, finances, taxes, or law — as informed suggestions, not professional advice. Business decisions, and their outcomes, remain yours.</p>
+
+        <h2>8. Acceptable use</h2>
+        <p>Don't use Indalbo to break the law, infringe others' rights, send spam or deceptive content through connected channels, probe or disrupt the platform's security or other customers' workspaces, or circumvent the approval gates. We may suspend or terminate accounts that do.</p>
+
+        <h2>9. Trademarks and third parties</h2>
+        <p>All product names, logos, and brands referenced in the service are the property of their respective owners. Indalbo is an independent product and is not endorsed by, certified by, or affiliated with any of the platforms it connects to.</p>
+        <div class="notice">
+          <p>The term "Etsy" is a trademark of Etsy, Inc. This application uses the Etsy API but is not endorsed or certified by Etsy, Inc.</p>
+        </div>
+
+        <h2>10. Disclaimer of warranties</h2>
+        <p>Indalbo is provided <strong>"as is"</strong> and <strong>"as available"</strong>, without warranties of any kind, express or implied — including merchantability, fitness for a particular purpose, and non-infringement. We don't warrant that the service will be uninterrupted, error-free, or that AI output will be accurate.</p>
+
+        <h2>11. Limitation of liability</h2>
+        <p>To the fullest extent permitted by law, we're not liable for indirect, incidental, special, consequential, or punitive damages, or for lost profits, revenue, or data. Our total liability for any claim relating to the service is limited to the greater of US $100 or the amount you paid us in the twelve months before the claim arose.</p>
+
+        <h2>12. Termination</h2>
+        <p>You can stop using Indalbo and delete your organization at any time. We may suspend or terminate access for violations of these terms or to protect the service and its users. On termination, your data is handled as described in the <a href="./privacy.html">Privacy Policy</a> — deleted with your workspace, with a full purge available on request.</p>
+
+        <h2>13. Changes to these terms</h2>
+        <p>If we change these terms materially, we'll post the update here with a new effective date and tell you in the app or by email. Using the service after changes take effect means you accept them.</p>
+
+        <h2>14. Contact</h2>
+        <p>Questions about these terms: <a href="mailto:support@indalbo.com">support@indalbo.com</a>.</p>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="foot">
+    <div class="wrap">
+      <a class="brand" href="./" aria-label="Indalbo home">
+        <span class="star" aria-hidden="true"></span>
+        <span class="wordmark">Indalbo</span>
+      </a>
+      <span class="tagline">The agentic operating system for founders.</span>
+      <div class="foot-links">
+        <a href="https://app.indalbo.com">Open the app</a>
+        <a href="./privacy.html">Privacy</a>
+        <a href="./terms.html">Terms</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
