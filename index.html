@@ -254,6 +254,14 @@
     .chip .d { width: 8px; height: 8px; border-radius: 50%; background: var(--c, var(--sky-deep)); flex-shrink: 0; }
     .stack-note { margin-top: 20px; font-size: 14px; color: var(--ink-faint); max-width: 60ch; }
     .stack-note b { color: var(--ink-soft); font-weight: 560; }
+    .connector-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+    .connector-group { min-width: 0; padding: 20px; border: 1px solid var(--glass-border); border-radius: var(--radius); background: var(--glass-tint); backdrop-filter: blur(12px); }
+    .connector-group h3 { margin: 0; font-size: 15px; font-weight: 560; }
+    .connector-group p { margin: 6px 0 16px; font-size: 12px; line-height: 1.5; color: var(--ink-soft); }
+    .connector-group .chips { gap: 7px; }
+    .connector-group .chip { padding: 8px 11px; font-size: 12px; }
+    @media (max-width: 800px) { .connector-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (max-width: 460px) { .connector-grid { grid-template-columns: 1fr; } }
 
     /* -------- Closing CTA -------- */
     .closing { padding: clamp(40px, 7vh, 84px) 0; }
@@ -666,24 +674,24 @@
               <p>Company and department goals. Shared ownership.</p>
             </article>
             <article class="benefit benefit-connections">
-              <div class="connections-art" role="img" aria-label="Gmail, Google Sheets, Mailchimp and Stripe connected through Indalbo.">
+              <div class="connections-art" role="img" aria-label="Proposed agency connectors: Gmail for requests, Asana for delivery, Harvest for time, and QuickBooks for billing. Availability to be confirmed.">
                 <div class="tool-orbit" aria-hidden="true"></div>
                 <div class="tool-badge tool-mail"><span aria-hidden="true">✉</span>Gmail</div>
-                <div class="tool-badge tool-sheet"><span aria-hidden="true">▦</span>Sheets</div>
-                <div class="tool-badge tool-campaign"><span aria-hidden="true">M</span>Mailchimp</div>
-                <div class="tool-badge tool-payment"><span aria-hidden="true">S</span>Stripe</div>
+                <div class="tool-badge tool-sheet"><span aria-hidden="true">✓</span>Asana</div>
+                <div class="tool-badge tool-campaign"><span aria-hidden="true">◷</span>Harvest</div>
+                <div class="tool-badge tool-payment"><span aria-hidden="true">QB</span>QuickBooks</div>
                 <div class="tool-center"><span class="star" aria-hidden="true"></span></div>
               </div>
-              <h3>Your tools.<br>Part of the team.</h3>
-              <p>30+ integrations. Connected understanding and action.</p>
-              <a href="#connect" class="connections-link">Explore integrations ↗</a>
+              <h3>Client work.<br>One connected picture.</h3>
+              <p>Agency connector priorities.</p>
+              <a href="#connect" class="connections-link">Explore agency tools ↗</a>
             </article>
           </div>
         </div>
       </div>
     </section>
     <section class="proof-section" aria-label="Current Indalbo capabilities">
-      <div class="wrap proof-band"><span>30+ integrations</span><span>Creates work proactively</span><span>Human approvals built in</span></div>
+      <div class="wrap proof-band"><span>Revenue &amp; margin recovery</span><span>Creates work proactively</span><span>Human approvals built in</span></div>
     </section>
 
     <section class="feat" id="control">
@@ -714,33 +722,41 @@
       </div>
     </section>
 
-    <!-- Connector wall -->
-    <section class="stack" id="connect">
+    <!-- Agency connector priorities: vendor choices are not a claim of deployed support. -->
+    <section class="stack" id="connect" aria-labelledby="agency-connectors-title">
       <div class="wrap">
         <div class="section-head">
-          <p class="section-label rise">Real tools, real outcomes</p>
-          <h2 class="rise">Plugs into the tools you <span class="serif">already run</span>.</h2>
-          <p class="rise">One connected view of your company.</p>
+          <p class="section-label rise">Agency connector priorities</p>
+          <h2 class="rise" id="agency-connectors-title">The tools behind<br><span class="serif">your agency’s margin.</span></h2>
+          <p class="rise">Revenue &amp; Margin Recovery for marketing and advertising agencies.</p>
         </div>
-        <div class="chips rise d1">
-          <span class="chip"><span class="d" style="--c: var(--sunrise-deep)"></span>Gmail</span>
-          <span class="chip"><span class="d" style="--c: var(--sky-deep)"></span>Google Analytics</span>
-          <span class="chip"><span class="d" style="--c: var(--amber-deep)"></span>Mailchimp</span>
-          <span class="chip"><span class="d" style="--c: var(--coral-deep)"></span>Instagram</span>
-          <span class="chip"><span class="d" style="--c: var(--sky-deep)"></span>Facebook</span>
-          <span class="chip"><span class="d" style="--c: var(--ink)"></span>TikTok</span>
-          <span class="chip"><span class="d" style="--c: var(--moss-deep)"></span>Google Sheets</span>
-          <span class="chip"><span class="d" style="--c: var(--electric-deep)"></span>Stripe</span>
-          <span class="chip"><span class="d" style="--c: var(--coral-deep)"></span>Shopify</span>
-          <span class="chip"><span class="d" style="--c: var(--electric-deep)"></span>Tally</span>
-          <span class="chip"><span class="d" style="--c: var(--sunrise-deep)"></span>Etsy</span>
-          <span class="chip"><span class="d" style="--c: var(--moss-deep)"></span>Printify</span>
-          <span class="chip"><span class="d" style="--c: var(--amber-deep)"></span>Gumroad</span>
-          <span class="chip"><span class="d" style="--c: var(--moss-deep)"></span>UptimeRobot</span>
-          <span class="chip"><span class="d" style="--c: var(--sky-deep)"></span>Web search</span>
-          <span class="chip"><span class="d" style="--c: var(--coral-deep)"></span>Image generation</span>
+        <div class="connector-grid rise d1">
+          <div class="connector-group">
+            <h3>Client requests</h3><p>What the client asked for.</p>
+            <div class="chips"><span class="chip"><span class="d" style="--c: var(--sunrise-deep)"></span>Gmail</span><span class="chip"><span class="d" style="--c: var(--sky-deep)"></span>Slack</span></div>
+          </div>
+          <div class="connector-group">
+            <h3>Agreed scope</h3><p>What the contract covers.</p>
+            <div class="chips"><span class="chip"><span class="d" style="--c: var(--moss-deep)"></span>Google Drive</span></div>
+          </div>
+          <div class="connector-group">
+            <h3>Delivery</h3><p>What the team is doing.</p>
+            <div class="chips"><span class="chip"><span class="d" style="--c: var(--sunrise-deep)"></span>Asana</span></div>
+          </div>
+          <div class="connector-group">
+            <h3>Time &amp; costs</h3><p>What the work actually costs.</p>
+            <div class="chips"><span class="chip"><span class="d" style="--c: var(--amber-deep)"></span>Harvest</span></div>
+          </div>
+          <div class="connector-group">
+            <h3>Billing</h3><p>What the agency gets paid.</p>
+            <div class="chips"><span class="chip"><span class="d" style="--c: var(--moss-deep)"></span>QuickBooks</span></div>
+          </div>
+          <div class="connector-group">
+            <h3>Client records</h3><p>Which client and agreement.</p>
+            <div class="chips"><span class="chip"><span class="d" style="--c: var(--sunrise-deep)"></span>HubSpot</span></div>
+          </div>
         </div>
-        <p class="stack-note rise d2"><b>30+ integrations today.</b> One operational picture.</p>
+        <p class="stack-note rise d2">Connector shortlist for review. Availability to be confirmed.</p>
       </div>
     </section>
 
