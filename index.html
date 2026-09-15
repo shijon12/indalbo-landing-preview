@@ -451,7 +451,9 @@
     }
     @media (max-width: 370px) { .benefit { padding: 21px; }.benefit h3 { font-size: 27px; }.team-chip { padding: 10px; }.team-branches { gap: 8px; }.goal-bubble { padding: 14px; } }
 
-    .waitlist-form { margin-top: 30px; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; text-align: left; }
+    .waitlist-form { margin: 30px auto 0; display: grid; grid-template-columns: 1fr; gap: 12px; text-align: left; max-width: 580px; }
+    .form-processor { margin: 0; font-size: 11px; line-height: 1.5; color: var(--ink-faint); }
+    .form-processor a { color: inherit; text-underline-offset: 2px; }
     .form-field { display: grid; gap: 7px; }
     .form-field.full { grid-column: 1 / -1; }
     .form-field label { font: 500 10px var(--font-mono); letter-spacing: .07em; text-transform: uppercase; color: var(--ink-soft); }
@@ -589,7 +591,7 @@
           <a class="btn-pill waitlist-link" href="#waitlist">Join the waitlist <span class="arrow" aria-hidden="true">→</span></a>
           <a class="btn-pill ghost" href="#story">Explore an example <span aria-hidden="true">↓</span></a>
         </div>
-        <p class="cta-note rise d4">Review preview · Signups disabled.</p>
+        <p class="cta-note rise d4">Request an invitation to the private beta.</p>
       </div>
     </section>
 
@@ -766,17 +768,15 @@
       <div class="wrap">
         <div class="closing-card rise">
           <h2>Make your company<br><span class="serif">intelligent.</span></h2>
-          <p>Review preview only. This form does not collect or send contact details.</p>
-          <div class="waitlist-form" id="waitlist-form" aria-describedby="waitlist-status">
-            <div class="form-field"><label for="waitlist-name">Name</label><input disabled id="waitlist-name" name="name" type="text" autocomplete="name" maxlength="100" required /></div>
-            <div class="form-field"><label for="waitlist-email">Work email</label><input disabled id="waitlist-email" name="email" type="email" autocomplete="email" maxlength="254" required /></div>
-            <div class="form-field"><label for="waitlist-company">Company</label><input disabled id="waitlist-company" name="company" type="text" autocomplete="organization" maxlength="160" required /></div>
-            <div class="form-field"><label for="waitlist-role">Your role</label><input disabled id="waitlist-role" name="role" type="text" autocomplete="organization-title" maxlength="100" /></div>
-            <div class="form-field full"><label for="waitlist-goal">What would you want Indalbo to own?</label><textarea disabled id="waitlist-goal" name="goal" maxlength="2000" placeholder="Optional"></textarea></div>
-            <div class="form-trap" aria-hidden="true"><label for="waitlist-website">Leave this empty</label><input disabled id="waitlist-website" name="website" tabindex="-1" autocomplete="off" /></div>
-            <div class="form-submit"><button class="btn-pill" id="waitlist-submit" type="button" disabled>Signups disabled in preview</button><span class="form-note">No details are saved. See our <a href="./privacy.html">Privacy Policy</a>.</span></div>
-            <p class="form-status" id="waitlist-status" role="status" aria-live="polite" tabindex="-1">Design review only. Signup is unavailable here.</p>
-          </div>
+          <p>Just your email. We’ll be in touch about beta access.</p>
+          <form class="waitlist-form" id="waitlist-form" action="https://formsubmit.co/support@indalbo.com" method="post" aria-describedby="waitlist-purpose waitlist-processor">
+            <div class="form-field"><label for="waitlist-email">Email address</label><input id="waitlist-email" name="email" type="email" autocomplete="email" inputmode="email" maxlength="254" placeholder="you@company.com" required /></div>
+            <input type="hidden" name="_subject" value="Indalbo waitlist signup" />
+            <input type="hidden" name="_template" value="table" />
+            <div class="form-trap" aria-hidden="true"><label for="waitlist-website">Leave this empty</label><input id="waitlist-website" name="_honey" type="text" tabindex="-1" autocomplete="off" /></div>
+            <div class="form-submit"><button class="btn-pill" id="waitlist-submit" type="submit">Join the waitlist <span class="arrow" aria-hidden="true">→</span></button><span class="form-note" id="waitlist-purpose">For beta access updates. <a href="./privacy.html">Privacy Policy</a> · <a href="./terms.html">Terms of Service</a></span></div>
+            <p class="form-processor" id="waitlist-processor">FormSubmit forwards your email to support@indalbo.com. <a href="https://formsubmit.co/privacy.pdf">Data handling</a></p>
+          </form>
         </div>
       </div>
     </section>
@@ -793,8 +793,8 @@
       <div class="foot-links">
         <a href="https://app.indalbo.com">Open the app</a>
         <a href="https://app.indalbo.com/sign-in">Sign in</a>
-        <a href="./privacy.html">Privacy</a>
-        <a href="./terms.html">Terms</a>
+        <a href="./privacy.html">Privacy Policy</a>
+        <a href="./terms.html">Terms of Service</a>
       </div>
     </div>
   </footer>
